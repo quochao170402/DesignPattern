@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "Abstract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderPattern", "BuilderPattern\BuilderPattern.csproj", "{08C48946-59E0-4E74-A6EC-96ED8FF5EC24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{4F754239-D337-46DC-930E-B79E6988590B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{08C48946-59E0-4E74-A6EC-96ED8FF5EC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C48946-59E0-4E74-A6EC-96ED8FF5EC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C48946-59E0-4E74-A6EC-96ED8FF5EC24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F754239-D337-46DC-930E-B79E6988590B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F754239-D337-46DC-930E-B79E6988590B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F754239-D337-46DC-930E-B79E6988590B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F754239-D337-46DC-930E-B79E6988590B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
