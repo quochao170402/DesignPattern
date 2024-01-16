@@ -26,4 +26,12 @@ car.AddComponent(new Chip() { Price = 200 });
 car.AddComponent(new Valve() { Price = 300 });
 car.AddComponent(new Screen() { Price = 400 });
 
+var subCar = new CarComponent();
+subCar.AddComponent(new Chip() { Price = 1 });
+subCar.AddComponent(new Valve() { Price = 32200 });
+subCar.AddComponent(new Screen() { Price = 33 });
+
+car.AddComponent(subCar);
+car.AddComponent(subCar);
+car.AddComponent(subCar);
 System.Console.WriteLine(car.GetPrice());
