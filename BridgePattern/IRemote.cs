@@ -22,14 +22,14 @@ public class BasicRemote : IRemote
 
     public void TogglePower()
     {
-        if (_device.IsOn)
+        if (_device.IsPower)
         {
-            _device.IsOn = false;
+            _device.IsPower = false;
             _device.Off();
         }
         else
         {
-            _device.IsOn = true;
+            _device.IsPower = true;
             _device.On();
         }
     }
