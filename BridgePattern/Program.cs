@@ -15,7 +15,10 @@ Color color = new Red()
 };
 Shape shape = new Square(color)
 {
-    Name = "Square"
+    Name = "Square",
+    Type = ShapeType.Square,
+    Hight = 100,
+    Width = 20
 };
 IPainter painter = new Painter(shape);
 var paintedShape = painter.CreateShape();

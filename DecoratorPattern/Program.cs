@@ -10,3 +10,7 @@ var coffee = new MilkDecorator(
 
 System.Console.WriteLine(coffee.GetDescription());
 System.Console.WriteLine(coffee.GetPrice());
+
+// Core object 
+// Wrap core object by decorator -> return type of core object
+// Wrap wrapped object by other decorators -> return type of core object

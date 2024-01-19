@@ -34,4 +34,8 @@ subCar.AddComponent(new Screen() { Price = 33 });
 car.AddComponent(subCar);
 car.AddComponent(subCar);
 car.AddComponent(subCar);
+
 System.Console.WriteLine(car.GetPrice());
+// Car = many sub-cars
+//  - SubCar = many devices
+//      - Device
