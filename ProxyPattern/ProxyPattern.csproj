@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="CacheProxy\" />
     <Folder Include="DatabaseAccessExample\" />
   </ItemGroup>
 
