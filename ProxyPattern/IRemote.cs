@@ -1,29 +1,23 @@
 ﻿namespace ProxyPattern;
 
-public interface IRemote
+public abstract class IRemote
 {
-    IService TurnOn(Request request);
-    void TurnOff(Request request);
+    public IService? Service { get; set; }
+
+    public abstract string Request(Request request);
+
 }
 
 public class Remote : IRemote
 {
-    public void TurnOff(Request request)
+    public override string Request(Request request)
     {
-        System.Console.WriteLine($"Turn off {request.Port}");
-    }
+        if (Service == null)
+        {
+            return "404";
+        }
 
-    public IService TurnOn(Request request)
-    {
-        System.Console.WriteLine($"Turn on {request.Port}");
-        if (request.Port == 3333)
-        {
-            return new KeyClock();
-        }
-        else
-        {
-            return new WebApi();
-        }
+        return Service.Reply(request);
     }
 }
 

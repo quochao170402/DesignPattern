@@ -2,5 +2,5 @@
 
 public interface IService
 {
-    void Reply(Request request);
+    string Reply(Request request);
 }

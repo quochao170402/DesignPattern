@@ -2,8 +2,8 @@
 
 public class WebApi : IService
 {
-    public void Reply(Request request)
+    public string Reply(Request request)
     {
-        System.Console.WriteLine($"Web api {request.Content}");
+        return $"Web api {request.Content}";
     }
 }

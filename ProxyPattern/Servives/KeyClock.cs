@@ -2,8 +2,8 @@
 
 public class KeyClock : IService
 {
-    public void Reply(Request request)
+    public string Reply(Request request)
     {
-        System.Console.WriteLine($"KeyClock: {request.Content}");
+        return $"KeyClock: {request.Content}";
     }
 }
