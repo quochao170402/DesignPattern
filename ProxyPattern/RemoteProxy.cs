@@ -12,7 +12,7 @@ public class RemoteProxy : IRemote
 
         dictionary = new Dictionary<int, string>(){
             {3333, "http://localhost:3333/key_clock"},
-            {4444, "http://localhost:4444/key_clock"}
+            {4444, "http://localhost:4444/web_api"}
         };
     }
 

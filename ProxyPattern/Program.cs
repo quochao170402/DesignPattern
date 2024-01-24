@@ -5,7 +5,7 @@ Request request = new Request(4444, new Header()
 {
     RequestType = "key_clock",
     Token = "access_token"
-}, "Get User by Token", "http://localhost:4444/key_clock");
+}, "Get products from web_api service", "http://localhost:4444/products?categoryId=1");
 
 IRemote proxy = new RemoteProxy(new ServiceFactory());
 System.Console.WriteLine(proxy.Request(request));
