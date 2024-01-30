@@ -3,10 +3,7 @@ using CommandPattern;
 
 Console.WriteLine("Hello, World!");
 
-Receiver receiver = new Receiver()
-{
-    State = true
-};
+Receiver receiver = new Fan();
 Invoker invoker = new Invoker(new Command(receiver));
 invoker.Execute();
 invoker.Undo();
