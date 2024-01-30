@@ -7,13 +7,18 @@ Console.WriteLine("Hello, World!");
 // 1. Authentication Middleware: check request has token
 // 2. Authorization Middleware: check token contains 'token'
 // 3. Check permission of user from token: check token contains 'create'
-IMiddleware authentication = new AuthenticationMiddleware();
-IMiddleware authorization = new AuthorizationMiddleware();
-IMiddleware permission = new PermissionMiddleware();
-authorization.SetNext(permission);
-authentication.SetNext(authorization);
 
-authentication.Handle(new Request()
+BaseHandler handler = new ValidateUserNameHandler();
+handler.SetNext(new ValidatePasswordHandler())
+    .SetNext(new ValidateUserRoleHandler())
+    .SetNext(new ValidateUserPermissionHandler());
+
+bool isValidUser = handler.SecurityHandler(new User()
 {
-    Token = "token_create"
+    UserName = "username",
+    Password = "password",
+    Role = "admin",
+    Permission = "create/update/delete/read"
 });
+
+System.Console.WriteLine(isValidUser);
