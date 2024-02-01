@@ -1,13 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using IteratorPattern;
+using IteratorPattern.Spotify;
 
 Console.WriteLine("Hello, World!");
-var myPlaylist = new Playlist();
-myPlaylist.AddSong(new Song("Title 1", "Artist 1"));
-myPlaylist.AddSong(new Song("Title 2", "Artist 2"));
-myPlaylist.AddSong(new Song("Title 3", "Artist 3"));
-IIterator<Song> iterator = myPlaylist.CreateIterator();
+var artist = new Artist("buiquochao", new List<Song>());
+
+var songs = new List<Song>(){
+    new("song1", artist),
+    new("song2", artist),
+    new("song3", artist),
+    new("song4", artist),
+    new("song5", artist),
+};
+var playlist = new Playlist(songs, true);
+
+IIterator<Song> iterator = playlist.CreateIterator();
+while (iterator.HasNext())
+{
+    Console.WriteLine(iterator.Next());
+}
+System.Console.WriteLine();
+iterator.Reset();
 while (iterator.HasNext())
 {
     Console.WriteLine(iterator.Next());
