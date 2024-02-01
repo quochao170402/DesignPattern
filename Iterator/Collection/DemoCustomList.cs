@@ -12,7 +12,7 @@ public class DemoCustomList
         list.Add("asdhafdhahfdfadsf");
         list.Add("asdffhahaadsf");
 
-        IIterator<string> iterator = new Iterator<string>(list);
+        IIterator<string> iterator = list.Iterator();
 
         System.Console.WriteLine("Next");
         while (iterator.HasNext())

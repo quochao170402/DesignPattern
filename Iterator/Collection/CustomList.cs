@@ -31,4 +31,9 @@ public class CustomList<T>
     {
         return _source[index];
     }
+
+    public IIterator<T> Iterator()
+    {
+        return new Iterator<T>(this);
+    }
 }
