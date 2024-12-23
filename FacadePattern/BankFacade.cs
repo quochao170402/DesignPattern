@@ -18,26 +18,25 @@ public class BankFacade
             return;
         }
         account.Amount += money;
-        System.Console.WriteLine(account.Amount);
+        Console.WriteLine(account.Amount);
     }
 
     public void Withdraw(BankAccount account, int amount)
     {
         if (!_accountManager.ValidateAccount(account.Id, account.SecurityCode))
         {
-            System.Console.WriteLine("Invalid account");
+            Console.WriteLine("Invalid account");
             return;
         }
 
         if (!_bankMoneyManager.IsEnoughMoney(account.Amount - amount))
         {
-            System.Console.WriteLine("Not enough money");
+            Console.WriteLine("Not enough money");
             return;
         }
 
         account.Amount -= amount;
-        System.Console.WriteLine(account.Amount);
-
+        Console.WriteLine(account.Amount);
     }
 
 }

@@ -3,12 +3,12 @@ using FacadePattern;
 
 Console.WriteLine("Hello, World!");
 
-BankAccount account = new BankAccount()
+BankAccount account = new()
 {
-    Id = "123",
+    Id = "1213",
     SecurityCode = "321"
 };
 
-BankFacade facade = new BankFacade(new AccountManager(), new BankMoneyManager());
-facade.Deposit(account, 10000);
+BankFacade facade = new(new AccountManager(), new BankMoneyManager());
+facade.Deposit(account, 1000);
 facade.Withdraw(account, 10000000);
