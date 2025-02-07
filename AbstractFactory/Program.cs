@@ -5,8 +5,8 @@ using AbstractFactory.Factories;
 using AbstractFactory.Models;
 using Type = AbstractFactory.Enums.Type;
 
-const Type type = Type.Chair;
-const Style style = Style.Modern;
+const Type type = Type.Sofa;
+const Style style = Style.Victorian;
 
 IFactory factory = new Factory();
 IFurnitureFactory furnitureFactory = factory.GetFurnitureFactory(style);
