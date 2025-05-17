@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StructuralPatterns", "Struc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BehavioralPatterns", "BehavioralPatterns", "{48532D12-34E6-44DF-8198-B28536B85AEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{630E606E-336B-4C63-93D3-DF8DDEB0ED81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{282D94EE-120E-4EC7-A9F0-808D12A53C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282D94EE-120E-4EC7-A9F0-808D12A53C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282D94EE-120E-4EC7-A9F0-808D12A53C93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{630E606E-336B-4C63-93D3-DF8DDEB0ED81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630E606E-336B-4C63-93D3-DF8DDEB0ED81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630E606E-336B-4C63-93D3-DF8DDEB0ED81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630E606E-336B-4C63-93D3-DF8DDEB0ED81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,5 +131,6 @@ Global
 		{09B192D2-0D6A-4702-A9D7-62D6813BB7B4} = {48532D12-34E6-44DF-8198-B28536B85AEC}
 		{C7BA4772-EF20-4230-8ED2-C37F80CDEC2F} = {48532D12-34E6-44DF-8198-B28536B85AEC}
 		{282D94EE-120E-4EC7-A9F0-808D12A53C93} = {48532D12-34E6-44DF-8198-B28536B85AEC}
+		{630E606E-336B-4C63-93D3-DF8DDEB0ED81} = {48532D12-34E6-44DF-8198-B28536B85AEC}
 	EndGlobalSection
 EndGlobal

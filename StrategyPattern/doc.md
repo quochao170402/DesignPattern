@@ -1,6 +1,6 @@
 # STRATEGY PATTERN
 
-##### 1. Defined
+##### 1. Identify
 Strategy pattern defines a family of algorithm and encapsulates each one and makes them interchangeable.
 The strategy lets the algorithm vary independently in clients that use it.
 
