@@ -10,7 +10,6 @@ Observer pattern defines a one-to-many dependency between objects so that when o
 * Decoupling the subject from its observers: The subject don't need knows about its observers, only notify them.
 * Dynamic subscription and unsubscription at runtime: add and remove observers at runtime
 
-
 #### 3. Benefits
 * Loosely coupling: The subject (publisher) and observers (subscribers) are loosely coupled, subject don't need knows observers.
 * Flexibility & Extensibility: Easily to add, remove, notify to observers and easily to add create and add new observer types

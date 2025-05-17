@@ -1,4 +1,4 @@
-namespace ObserverPattern;
+namespace ObserverPattern.Basic;
 
 public class WeatherData : ISubject
 {
