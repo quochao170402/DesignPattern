@@ -1,8 +1,7 @@
-﻿namespace CommandPattern;
+﻿namespace CommandPattern.Receivers;
 
 public class Fan : Receiver
 {
-
     public Fan()
     {
         Type = ReceiverType.Fan;
@@ -11,15 +10,14 @@ public class Fan : Receiver
 
     public override void TurnOff()
     {
-
         if (!State)
         {
-            System.Console.WriteLine("Fan is turning off");
+            Console.WriteLine("Fan is turning off");
         }
         else
         {
             State = false;
-            System.Console.WriteLine("Turning off Fan");
+            Console.WriteLine("Turning off Fan");
         }
     }
 
@@ -27,13 +25,12 @@ public class Fan : Receiver
     {
         if (State)
         {
-            System.Console.WriteLine("Fan is turning on");
+            Console.WriteLine("Fan is turning on");
         }
         else
         {
             State = true;
-            System.Console.WriteLine("Turning on Fan");
+            Console.WriteLine("Turning on Fan");
         }
     }
-
 }

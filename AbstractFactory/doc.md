@@ -1,13 +1,16 @@
 # Abstract Factory Pattern
 
-The Abstract Factory Pattern is a creational design pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. This pattern is particularly useful when the system needs to be independent of how its objects are created, composed, and represented.
+The Abstract Factory Pattern is a creational design pattern that provides an interface for creating families of related
+or dependent objects without specifying their concrete classes. This pattern is particularly useful when the system
+needs to be independent of how its objects are created, composed, and represented.
 
 ## Key Concepts
 
 - **Abstract Factory**: Declares an interface for creating abstract products.
 - **Concrete Factory**: Implements the operations to create concrete product objects.
 - **Abstract Product**: Declares an interface for a type of product object.
-- **Concrete Product**: Defines a product object to be created by the corresponding concrete factory and implements the Abstract Product interface.
+- **Concrete Product**: Defines a product object to be created by the corresponding concrete factory and implements the
+  Abstract Product interface.
 - **Client**: Uses only interfaces declared by Abstract Factory and Abstract Product classes.
 
 ## UML Diagram
@@ -234,11 +237,14 @@ Output: Sofa Art Deco
 
 ## Benefits
 
-- **Isolation of concrete classes**: The Abstract Factory Pattern helps to isolate the client code from the concrete classes.
-- **Ease of exchanging product families**: The pattern makes it easy to exchange entire product families without changing the client code.
+- **Isolation of concrete classes**: The Abstract Factory Pattern helps to isolate the client code from the concrete
+  classes.
+- **Ease of exchanging product families**: The pattern makes it easy to exchange entire product families without
+  changing the client code.
 - **Consistency among products**: It ensures that products created by a factory are compatible with each other.
 
 ## Drawbacks
 
 - **Complexity**: The pattern can introduce complexity due to the increased number of classes and interfaces.
-- **Difficulty in supporting new kinds of products**: Adding new products to the factory can be challenging as it requires changes to the abstract factory interface and all its concrete implementations.
+- **Difficulty in supporting new kinds of products**: Adding new products to the factory can be challenging as it
+  requires changes to the abstract factory interface and all its concrete implementations.

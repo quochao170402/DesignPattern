@@ -1,10 +1,10 @@
-﻿namespace ProxyPattern;
+﻿namespace ProxyPattern.DatabaseAccessExample;
 
 public class DatabaseAccessProxy : IDatabaseAccess
 {
-    private IDatabaseAccess _databaseAccess;
-    private readonly string _connectionString;
     private readonly string _accessKey;
+    private readonly string _connectionString;
+    private IDatabaseAccess _databaseAccess;
 
     public DatabaseAccessProxy(string connectionString, string accessKey)
     {
@@ -14,15 +14,9 @@ public class DatabaseAccessProxy : IDatabaseAccess
 
     public string Get(string query)
     {
-        if (_databaseAccess == null)
-        {
-            _databaseAccess = new DatabaseAccess();
-        }
+        if (_databaseAccess == null) _databaseAccess = new DatabaseAccess();
 
-        if (!canConnect())
-        {
-            return "Denied";
-        }
+        if (!canConnect()) return "Denied";
 
         return _databaseAccess.Get(query);
     }

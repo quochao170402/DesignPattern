@@ -2,11 +2,6 @@
 
 public class Request
 {
-    public string Content { get; set; }
-    public Header Header { get; set; }
-    public int Port { get; set; }
-    public string Url { get; set; }
-
     public Request(int port, Header header, string content, string url)
     {
         Port = port;
@@ -15,7 +10,10 @@ public class Request
         Url = url;
     }
 
-
+    public string Content { get; set; }
+    public Header Header { get; set; }
+    public int Port { get; set; }
+    public string Url { get; set; }
 }
 
 public class Header

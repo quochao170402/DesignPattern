@@ -19,6 +19,10 @@ public class King : Character
 {
 }
 
-public class Queen: Character{}
+public class Queen : Character
+{
+}
 
-public class Troll : Character{}
+public class Troll : Character
+{
+}

@@ -6,7 +6,7 @@ public class Sofa : Furniture
 {
     public override void Display()
     {
-        System.Console.WriteLine($"Sofa {Style.GetDisplayName()}");
+        Console.WriteLine($"Sofa {Style.GetDisplayName()}");
     }
 }
 

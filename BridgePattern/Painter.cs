@@ -1,18 +1,21 @@
 ﻿namespace BridgePattern;
+
 public interface IPainter
 {
-    Shape CreateShape();
+    Shape.Shape CreateShape();
     void Paint();
 }
 
 public class Painter : IPainter
 {
-    private readonly Shape _shape;
-    public Painter(Shape shape)
+    private readonly Shape.Shape _shape;
+
+    public Painter(Shape.Shape shape)
     {
         _shape = shape;
     }
-    public Shape CreateShape()
+
+    public Shape.Shape CreateShape()
     {
         return _shape;
     }

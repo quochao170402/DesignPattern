@@ -1,4 +1,6 @@
-﻿namespace CommandPattern;
+﻿using CommandPattern.Receivers;
+
+namespace CommandPattern;
 
 public class Command : ICommand
 {

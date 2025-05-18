@@ -1,4 +1,4 @@
-﻿namespace ChainOfResponsibility;
+﻿namespace ChainOfResponsibility.Implement;
 
 public interface ISecurityService
 {
@@ -7,15 +7,17 @@ public interface ISecurityService
 
 public class LegacySecurityService : ISecurityService
 {
-    public readonly List<User> _users = new List<User>()
+    public readonly List<User> _users = new()
     {
-        new User(){
+        new User
+        {
             UserName = "quochao",
             Password = "password",
             Role = "admin",
-            Permission = "create/update/delete/get",
+            Permission = "create/update/delete/get"
         }
     };
+
     public bool Authenticate(User user)
     {
         if (!IsUserNameExist(user.UserName))

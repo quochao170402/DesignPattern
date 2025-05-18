@@ -1,4 +1,6 @@
-﻿namespace Adapter;
+﻿using Adapter.Models;
+
+namespace Adapter.Services;
 
 public interface IService
 {

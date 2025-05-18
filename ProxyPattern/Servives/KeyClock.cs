@@ -1,4 +1,4 @@
-﻿namespace ProxyPattern;
+﻿namespace ProxyPattern.Servives;
 
 public class KeyClock : IService
 {

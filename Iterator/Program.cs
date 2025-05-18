@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using IteratorPattern;
-using IteratorPattern.Spotify;
+using IteratorPattern.Collection;
 
 // Console.WriteLine("Hello, World!");
 // var artist = new Artist("buiquochao", new List<Song>());
@@ -27,5 +26,5 @@ using IteratorPattern.Spotify;
 //     Console.WriteLine(iterator.Next());
 // }
 
-DemoCustomList demo = new DemoCustomList();
+var demo = new DemoCustomList();
 demo.DemoNext();

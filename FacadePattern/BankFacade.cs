@@ -1,4 +1,7 @@
-﻿namespace FacadePattern;
+﻿using FacadePattern.Models;
+
+namespace FacadePattern;
+
 public class BankFacade
 {
     private readonly AccountManager _accountManager;
@@ -14,9 +17,10 @@ public class BankFacade
     {
         if (!_accountManager.ValidateAccount(account.Id, account.SecurityCode))
         {
-            System.Console.WriteLine("Invalid account");
+            Console.WriteLine("Invalid account");
             return;
         }
+
         account.Amount += money;
         Console.WriteLine(account.Amount);
     }
@@ -38,5 +42,4 @@ public class BankFacade
         account.Amount -= amount;
         Console.WriteLine(account.Amount);
     }
-
 }

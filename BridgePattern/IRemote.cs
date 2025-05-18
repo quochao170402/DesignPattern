@@ -1,4 +1,6 @@
-﻿namespace BridgePattern;
+﻿using BridgePattern.Models;
+
+namespace BridgePattern;
 
 public interface IRemote
 {

@@ -3,12 +3,12 @@
 using BuilderPattern;
 
 Console.WriteLine("Builder design pattern");
-NotificationBuilder builder = new NotificationBuilder();
-Notification notification = builder.AddNotice("asdfasdf")
-                                    .AddContent("asdfadsf")
-                                    .AddEmailAddress("asdfadsf")
-                                    .AddReceiver(123)
-                                    .AddSender(333)
-                                    .Build();
+var builder = new NotificationBuilder();
+var notification = builder.AddNotice("asdfasdf")
+    .AddContent("asdfadsf")
+    .AddEmailAddress("asdfadsf")
+    .AddReceiver(123)
+    .AddSender(333)
+    .Build();
 
-System.Console.WriteLine(notification);
+Console.WriteLine(notification);

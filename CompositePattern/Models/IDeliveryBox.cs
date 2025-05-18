@@ -1,4 +1,4 @@
-﻿namespace CompositePattern;
+﻿namespace CompositePattern.Models;
 
 public interface IDeliveryBox
 {

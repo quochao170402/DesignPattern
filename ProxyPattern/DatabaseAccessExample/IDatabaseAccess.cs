@@ -1,4 +1,4 @@
-﻿namespace ProxyPattern;
+﻿namespace ProxyPattern.DatabaseAccessExample;
 
 public interface IDatabaseAccess
 {

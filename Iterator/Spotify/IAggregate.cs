@@ -7,22 +7,25 @@ public interface IAggregate<T> where T : class
 
 public class Playlist : IAggregate<Song>
 {
-    public List<Song> Songs { get; set; }
     private List<Song> _cachedSongs;
-    public bool IsRandom { get; init; }
 
     public Playlist(List<Song> songs, bool isRandom)
     {
         Songs = songs;
         IsRandom = isRandom;
         if (isRandom)
-        {
             _cachedSongs = RandomPlay();
-        }
         else
-        {
             _cachedSongs = Songs;
-        }
+    }
+
+    public List<Song> Songs { get; set; }
+    public bool IsRandom { get; init; }
+
+
+    public IIterator<Song> CreateIterator()
+    {
+        return new PlaylistIterator(this);
     }
 
     public List<Song> RandomPlay()
@@ -42,13 +45,7 @@ public class Playlist : IAggregate<Song>
 
     public void Reset()
     {
-        System.Console.WriteLine("Reset");
+        Console.WriteLine("Reset");
         _cachedSongs = IsRandom ? RandomPlay() : Songs;
-    }
-
-
-    public IIterator<Song> CreateIterator()
-    {
-        return new PlaylistIterator(this);
     }
 }

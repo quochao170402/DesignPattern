@@ -1,4 +1,4 @@
-﻿namespace IteratorPattern;
+﻿namespace IteratorPattern.Collection;
 
 public interface IIterator<T>
 {
@@ -12,7 +12,6 @@ public interface IIterator<T>
 public class Iterator<T> : IIterator<T>
 {
     private readonly CustomList<T> _source;
-    public int Position { get; private set; }
 
     public Iterator(CustomList<T> source)
     {
@@ -20,12 +19,11 @@ public class Iterator<T> : IIterator<T>
         Position = 0;
     }
 
+    public int Position { get; private set; }
+
     public T? GetNext()
     {
-        if (HasNext())
-        {
-            return _source.Get(Position++);
-        }
+        if (HasNext()) return _source.Get(Position++);
 
         return default;
     }
@@ -47,10 +45,7 @@ public class Iterator<T> : IIterator<T>
 
     public T? GetPrevious()
     {
-        if (HasPrevious())
-        {
-            return _source.Get(Position--);
-        }
+        if (HasPrevious()) return _source.Get(Position--);
 
         return default;
     }

@@ -1,4 +1,4 @@
-﻿namespace ChainOfResponsibility;
+﻿namespace ChainOfResponsibility.Implement;
 
 public interface IHandler
 {
@@ -9,6 +9,8 @@ public abstract class BaseHandler : IHandler
 {
     private BaseHandler? _next;
 
+    public abstract bool SecurityHandler(User user);
+
     public BaseHandler SetNext(BaseHandler handler)
     {
         _next = handler;
@@ -17,15 +19,10 @@ public abstract class BaseHandler : IHandler
 
     protected bool Next(User user)
     {
-        if (_next == null)
-        {
-            return true;
-        }
+        if (_next == null) return true;
 
         return _next.SecurityHandler(user);
     }
-
-    public abstract bool SecurityHandler(User user);
 }
 
 public class ValidateUserNameHandler : BaseHandler
@@ -34,13 +31,13 @@ public class ValidateUserNameHandler : BaseHandler
     {
         if (string.IsNullOrEmpty(user.UserName))
         {
-            System.Console.WriteLine("User's password is empty");
+            Console.WriteLine("User's password is empty");
             return false;
         }
 
         if (user.UserName != "username")
         {
-            System.Console.WriteLine("User's username is incorrect");
+            Console.WriteLine("User's username is incorrect");
             return false;
         }
 
@@ -55,13 +52,13 @@ public class ValidatePasswordHandler : BaseHandler
     {
         if (string.IsNullOrEmpty(user.Password))
         {
-            System.Console.WriteLine("User's password is empty");
+            Console.WriteLine("User's password is empty");
             return false;
         }
 
         if (user.Password != "password")
         {
-            System.Console.WriteLine("User's password is incorrect");
+            Console.WriteLine("User's password is incorrect");
             return false;
         }
 
@@ -70,20 +67,19 @@ public class ValidatePasswordHandler : BaseHandler
     }
 }
 
-
 public class ValidateUserRoleHandler : BaseHandler
 {
     public override bool SecurityHandler(User user)
     {
         if (string.IsNullOrEmpty(user.Role))
         {
-            System.Console.WriteLine("User's role is empty");
+            Console.WriteLine("User's role is empty");
             return false;
         }
 
         if (user.Role.Trim().ToLower() != "admin")
         {
-            System.Console.WriteLine("User's role is incorrect");
+            Console.WriteLine("User's role is incorrect");
             return false;
         }
 
@@ -99,13 +95,13 @@ public class ValidateUserPermissionHandler : BaseHandler
     {
         if (string.IsNullOrEmpty(user.Permission))
         {
-            System.Console.WriteLine("User's role is empty");
+            Console.WriteLine("User's role is empty");
             return false;
         }
 
         if (!user.Permission.Contains("create"))
         {
-            System.Console.WriteLine("User's role is incorrect");
+            Console.WriteLine("User's role is incorrect");
             return false;
         }
 

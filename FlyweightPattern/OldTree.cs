@@ -1,4 +1,5 @@
 ﻿namespace FlyweightPattern;
+
 public class OldTree
 {
     public int X { get; set; }
@@ -16,7 +17,7 @@ public class OldTree
 
 public class OldForest
 {
-    public List<OldTree> Trees { get; set; } = new List<OldTree>();
+    public List<OldTree> Trees { get; set; } = new();
 
     public OldTree PlantTree(int x, int y, string name, string color, string texture)
     {
@@ -34,7 +35,8 @@ public class OldForest
 
     public void Draw()
     {
-        Trees.ForEach(tree => Console.WriteLine($"Tree: {tree.Name} - {tree.Color} - {tree.Texture} - {tree.X} - {tree.Y}"));
+        Trees.ForEach(tree =>
+            Console.WriteLine($"Tree: {tree.Name} - {tree.Color} - {tree.Texture} - {tree.X} - {tree.Y}"));
     }
 
     public void MoveTrees(int x, int y)

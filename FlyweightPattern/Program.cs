@@ -32,9 +32,9 @@ forest.PlantTree(5, 3, "a", "red", "b");
 forest.PlantTree(2, 2, "a", "green", "b");
 forest.PlantTree(0, 2, "a", "red", "b");
 
-System.Console.WriteLine("Before move");
+Console.WriteLine("Before move");
 forest.Draw();
-System.Console.WriteLine("==================");
+Console.WriteLine("==================");
 forest.MoveTrees(3, 4);
-System.Console.WriteLine("After move");
+Console.WriteLine("After move");
 forest.Draw();

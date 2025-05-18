@@ -1,11 +1,8 @@
-﻿using System.Collections;
-
-namespace IteratorPattern;
+﻿namespace IteratorPattern.Collection;
 
 public class CustomList<T>
 {
     private readonly List<T> _source;
-    public int Count { get => _source.Count; }
 
     public CustomList(List<T> source)
     {
@@ -16,6 +13,8 @@ public class CustomList<T>
     {
         _source = new List<T>();
     }
+
+    public int Count => _source.Count;
 
     public void Add(T element)
     {

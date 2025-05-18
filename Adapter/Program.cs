@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Adapter;
+using Adapter.Adapters;
+using Adapter.Models;
+using Adapter.Services;
 
 // Console.WriteLine("Hello, World!");
 // var line = new Line()
@@ -15,7 +17,7 @@ using Adapter;
 // var adapter = new RectangleAdapter(new Rectangle());
 // adapter.Adapter(1, 2, 3, 4);
 
-var request = new XMLRequest()
+var request = new XMLRequest
 {
     Id = 1,
     Data = "XML Data"
@@ -23,6 +25,6 @@ var request = new XMLRequest()
 
 IService legacyService = new LegacyService();
 legacyService.Execute(request);
-System.Console.WriteLine("=========");
+Console.WriteLine("=========");
 IService newService = new ServiceAdapter(new NewVersionService());
 newService.Execute(request);

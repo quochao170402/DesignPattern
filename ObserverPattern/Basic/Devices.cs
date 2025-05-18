@@ -6,24 +6,24 @@ public class CurrentConditions : IObserver, IDisplay
     private double Humidity { get; set; }
     private double Pressure { get; set; }
 
+    public void Display()
+    {
+        Console.WriteLine($"- Temperature: {Temperature}\n- Humidity: {Humidity}\n- Pressure: {Pressure}");
+    }
+
     public void Update(double temperature, double humidity, double pressure)
     {
         Temperature = temperature;
         Humidity = humidity;
         Pressure = pressure;
     }
-
-    public void Display()
-    {
-        Console.WriteLine($"- Temperature: {Temperature}\n- Humidity: {Humidity}\n- Pressure: {Pressure}");
-    }
 }
 
 public class WeatherStats : IObserver, IDisplay
 {
-    private readonly List<double> _temperatureReadings = [];
     private readonly List<double> _humidityReadings = [];
     private readonly List<double> _pressureReadings = [];
+    private readonly List<double> _temperatureReadings = [];
 
     private double AvgTemperature => _temperatureReadings.Count != 0 ? _temperatureReadings.Average() : 0.0;
     private double MaxTemperature => _temperatureReadings.Count != 0 ? _temperatureReadings.Max() : 0.0;
@@ -32,6 +32,14 @@ public class WeatherStats : IObserver, IDisplay
     private double AvgHumidity => _humidityReadings.Count != 0 ? _humidityReadings.Average() : 0.0;
     private double AvgPressure => _pressureReadings.Count != 0 ? _pressureReadings.Average() : 0.0;
 
+    public void Display()
+    {
+        Console.WriteLine("Weather Statistics:");
+        Console.WriteLine(
+            $"Temperature - Avg: {AvgTemperature:F1}, Max: {MaxTemperature:F1}, Min: {MinTemperature:F1}");
+        Console.WriteLine($"Humidity - Avg: {AvgHumidity:F1}");
+        Console.WriteLine($"Pressure - Avg: {AvgPressure:F1}");
+    }
 
 
     public void Update(double temperature, double humidity, double pressure)
@@ -40,23 +48,20 @@ public class WeatherStats : IObserver, IDisplay
         _humidityReadings.Add(humidity);
         _pressureReadings.Add(pressure);
     }
-
-    public void Display()
-    {
-        Console.WriteLine("Weather Statistics:");
-        Console.WriteLine($"Temperature - Avg: {AvgTemperature:F1}, Max: {MaxTemperature:F1}, Min: {MinTemperature:F1}");
-        Console.WriteLine($"Humidity - Avg: {AvgHumidity:F1}");
-        Console.WriteLine($"Pressure - Avg: {AvgPressure:F1}");
-    }
 }
-
 
 public class Forecast : IObserver, IDisplay
 {
-    private double _previousPressure;
     private double _currentPressure;
+    private double _previousPressure;
 
     private string ForecastMessage { get; set; } = "No forecast available.";
+
+    public void Display()
+    {
+        Console.WriteLine("Forecast:");
+        Console.WriteLine(ForecastMessage);
+    }
 
     public void Update(double temperature, double humidity, double pressure)
     {
@@ -64,33 +69,24 @@ public class Forecast : IObserver, IDisplay
         _currentPressure = pressure;
 
         if (Math.Abs(_previousPressure) < 0.0001)
-        {
             ForecastMessage = "Forecast initializing...";
-        }
         else if (_currentPressure > _previousPressure)
-        {
             ForecastMessage = "Improving weather on the way!";
-        }
         else if (_currentPressure < _previousPressure)
-        {
             ForecastMessage = "Watch out for cooler, rainy weather.";
-        }
         else
-        {
             ForecastMessage = "More of the same.";
-        }
-    }
-
-    public void Display()
-    {
-        Console.WriteLine("Forecast:");
-        Console.WriteLine(ForecastMessage);
     }
 }
 
 public class HeatIndex : IObserver, IDisplay
 {
     private double _heatIndexCelsius;
+
+    public void Display()
+    {
+        Console.WriteLine($"Heat Index (Feels Like): {_heatIndexCelsius:F1} °C");
+    }
 
     public void Update(double temperature, double humidity, double pressure)
     {
@@ -106,10 +102,5 @@ public class HeatIndex : IObserver, IDisplay
 
         // Convert back to Celsius
         _heatIndexCelsius = (HI_Fahrenheit - 32) * 5 / 9;
-    }
-
-    public void Display()
-    {
-        Console.WriteLine($"Heat Index (Feels Like): {_heatIndexCelsius:F1} °C");
     }
 }

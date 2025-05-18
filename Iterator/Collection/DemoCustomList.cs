@@ -1,4 +1,4 @@
-﻿namespace IteratorPattern;
+﻿namespace IteratorPattern.Collection;
 
 public class DemoCustomList
 {
@@ -12,34 +12,21 @@ public class DemoCustomList
         list.Add("asdhafdhahfdfadsf");
         list.Add("asdffhahaadsf");
 
-        IIterator<string> iterator = list.Iterator();
+        var iterator = list.Iterator();
 
-        System.Console.WriteLine("Next");
-        while (iterator.HasNext())
-        {
-            System.Console.WriteLine(iterator.GetNext());
-        }
+        Console.WriteLine("Next");
+        while (iterator.HasNext()) Console.WriteLine(iterator.GetNext());
 
-        System.Console.WriteLine("Previous");
-        while (iterator.HasPrevious())
-        {
-            System.Console.WriteLine(iterator.GetPrevious());
-        }
+        Console.WriteLine("Previous");
+        while (iterator.HasPrevious()) Console.WriteLine(iterator.GetPrevious());
 
-        System.Console.WriteLine("Reset");
+        Console.WriteLine("Reset");
         iterator.Reset();
 
-        System.Console.WriteLine("Next");
-        while (iterator.HasNext())
-        {
-            System.Console.WriteLine(iterator.GetNext());
-        }
+        Console.WriteLine("Next");
+        while (iterator.HasNext()) Console.WriteLine(iterator.GetNext());
 
-        System.Console.WriteLine("Previous");
-        while (iterator.HasPrevious())
-        {
-            System.Console.WriteLine(iterator.GetPrevious());
-        }
-
+        Console.WriteLine("Previous");
+        while (iterator.HasPrevious()) Console.WriteLine(iterator.GetPrevious());
     }
 }

@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using ChainOfResponsibility;
+
+using ChainOfResponsibility.Implement;
 
 Console.WriteLine("Hello, World!");
 
@@ -13,7 +14,7 @@ handler.SetNext(new ValidatePasswordHandler())
     .SetNext(new ValidateUserRoleHandler())
     .SetNext(new ValidateUserPermissionHandler());
 
-bool isValidUser = handler.SecurityHandler(new User()
+var isValidUser = handler.SecurityHandler(new User
 {
     UserName = "username",
     Password = "password",
@@ -21,4 +22,4 @@ bool isValidUser = handler.SecurityHandler(new User()
     Permission = "create/update/delete/read"
 });
 
-System.Console.WriteLine(isValidUser);
+Console.WriteLine(isValidUser);

@@ -6,10 +6,7 @@ public class School : IAnnouncementSubject
 
     public void Subscribe(ISubscriber subscriber)
     {
-        if (_subscribers.Contains(subscriber))
-        {
-            return;
-        }
+        if (_subscribers.Contains(subscriber)) return;
         _subscribers.Add(subscriber);
     }
 
@@ -20,10 +17,7 @@ public class School : IAnnouncementSubject
 
     public void Notify(string message)
     {
-        if (_subscribers.Count == 0)
-        {
-            return;
-        }
+        if (_subscribers.Count == 0) return;
 
         _subscribers.ForEach(x => x.ReceiveAnnouncement(message));
     }

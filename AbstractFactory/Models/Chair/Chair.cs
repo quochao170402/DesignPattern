@@ -1,4 +1,5 @@
 ﻿using AbstractFactory.Enums;
+using Type = AbstractFactory.Enums.Type;
 
 namespace AbstractFactory.Models.Chair;
 
@@ -6,11 +7,12 @@ public class Chair : Furniture
 {
     public Chair()
     {
-        Type = Enums.Type.Chair;
+        Type = Type.Chair;
     }
+
     public override void Display()
     {
-        System.Console.WriteLine($"Chair {Style.GetDisplayName()}");
+        Console.WriteLine($"Chair {Style.GetDisplayName()}");
     }
 }
 
@@ -24,7 +26,7 @@ public class ArtDecoChair : Chair
 
 public class VictorianChair : Chair
 {
-    public VictorianChair() : base()
+    public VictorianChair()
     {
         Style = Style.Victorian;
     }
@@ -32,7 +34,7 @@ public class VictorianChair : Chair
 
 public class ModernChair : Chair
 {
-    public ModernChair() : base()
+    public ModernChair()
     {
         Style = Style.Modern;
     }

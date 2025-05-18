@@ -1,4 +1,5 @@
-﻿namespace BridgePattern;
+﻿namespace BridgePattern.Shape;
+
 public abstract class Color
 {
     public string Name { get; set; }
@@ -9,7 +10,7 @@ public class Red : Color
 {
     public override void Paint()
     {
-        System.Console.WriteLine("Red");
+        Console.WriteLine("Red");
     }
 }
 
@@ -17,6 +18,6 @@ public class Blue : Color
 {
     public override void Paint()
     {
-        System.Console.WriteLine("Blue");
+        Console.WriteLine("Blue");
     }
 }

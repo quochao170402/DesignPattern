@@ -1,7 +1,7 @@
-﻿namespace Adapter;
+﻿namespace Adapter.Models;
+
 public class Rectangle
 {
-
     public int X1 { get; set; }
     public int Y1 { get; set; }
     public int Width { get; set; }
@@ -9,6 +9,6 @@ public class Rectangle
 
     public void Draw()
     {
-        System.Console.WriteLine($"{X1} - {Y1}, Width: {Width}, Hight: {Hight}");
+        Console.WriteLine($"{X1} - {Y1}, Width: {Width}, Hight: {Hight}");
     }
 }

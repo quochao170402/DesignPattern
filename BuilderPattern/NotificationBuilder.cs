@@ -33,10 +33,7 @@ public class NotificationBuilder
 
     public NotificationBuilder AddTime(DateTime? time)
     {
-        if (time == null)
-        {
-            time = DateTime.Now;
-        }
+        if (time == null) time = DateTime.Now;
         SendAt = (DateTime)time;
         return this;
     }
@@ -52,6 +49,7 @@ public class NotificationBuilder
         FacebookAccount = account;
         return this;
     }
+
     public NotificationBuilder AddNotice(string notice)
     {
         Notice = notice;
@@ -60,7 +58,7 @@ public class NotificationBuilder
 
     public Notification Build()
     {
-        return new Notification()
+        return new Notification
         {
             Id = Guid.NewGuid(),
             SenderId = SenderId,
@@ -69,7 +67,6 @@ public class NotificationBuilder
             Content = Content,
             Notice = Notice,
             FacebookAccount = FacebookAccount
-
         };
     }
 }

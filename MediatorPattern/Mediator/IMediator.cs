@@ -1,4 +1,5 @@
-﻿namespace MediatorPattern;
+﻿namespace MediatorPattern.Mediator;
+
 public interface IMediator
 {
     void Get();

@@ -25,10 +25,7 @@ public class PlaylistIterator : IIterator<Song>
 
     public Song? Next()
     {
-        if (HasNext())
-        {
-            return _aggregate.Get(_position++);
-        }
+        if (HasNext()) return _aggregate.Get(_position++);
 
         return null;
     }
@@ -39,4 +36,3 @@ public class PlaylistIterator : IIterator<Song>
         _aggregate.Reset();
     }
 }
-

@@ -1,4 +1,4 @@
-﻿namespace CommandPattern;
+﻿namespace CommandPattern.Receivers;
 
 public class TV : Receiver
 {
@@ -10,15 +10,14 @@ public class TV : Receiver
 
     public override void TurnOff()
     {
-
         if (!State)
         {
-            System.Console.WriteLine("TV is turning off");
+            Console.WriteLine("TV is turning off");
         }
         else
         {
             State = false;
-            System.Console.WriteLine("Turning off TV");
+            Console.WriteLine("Turning off TV");
         }
     }
 
@@ -26,12 +25,12 @@ public class TV : Receiver
     {
         if (State)
         {
-            System.Console.WriteLine("TV is turning on");
+            Console.WriteLine("TV is turning on");
         }
         else
         {
             State = true;
-            System.Console.WriteLine("Turning on TV");
+            Console.WriteLine("Turning on TV");
         }
     }
 }

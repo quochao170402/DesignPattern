@@ -4,16 +4,12 @@ public class ServerPool
 {
     private readonly List<string> _urls;
 
-    private static ServerPool? Instance
-    {
-        get;
-        set;
-    }
-
     private ServerPool()
     {
         _urls = new List<string>();
     }
+
+    private static ServerPool? Instance { get; set; }
 
     public static ServerPool GetInstance()
     {
@@ -27,15 +23,9 @@ public class ServerPool
 
     public bool Add(string url)
     {
-        if (!IsValidUrl(url))
-        {
-            return false;
-        }
+        if (!IsValidUrl(url)) return false;
 
-        if (_urls.Contains(url))
-        {
-            return false;
-        }
+        if (_urls.Contains(url)) return false;
 
         _urls.Add(url);
         return true;
@@ -43,15 +33,9 @@ public class ServerPool
 
     public bool Remove(string url)
     {
-        if (!IsValidUrl(url))
-        {
-            return false;
-        }
+        if (!IsValidUrl(url)) return false;
 
-        if (_urls.Contains(url))
-        {
-            return false;
-        }
+        if (_urls.Contains(url)) return false;
 
         _urls.Remove(url);
         return true;
@@ -60,6 +44,5 @@ public class ServerPool
     private bool IsValidUrl(string url)
     {
         return url.StartsWith("http") || url.StartsWith("https");
-
     }
 }

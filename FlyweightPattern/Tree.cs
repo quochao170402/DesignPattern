@@ -1,4 +1,5 @@
 ﻿namespace FlyweightPattern;
+
 public class Tree
 {
     public int X { get; set; }
@@ -13,7 +14,7 @@ public class Tree
 }
 
 /// <summary>
-/// TreeType is Flyweight
+///     TreeType is Flyweight
 /// </summary>
 public class TreeType
 {
@@ -39,14 +40,11 @@ public class TreeFactory
     public TreeType GetTreeType(string name, string color, string texture)
     {
         var treeType = _treeTypes.FirstOrDefault(x => x.Name == name
-                                                    && x.Color == color
-                                                    && x.Texture == texture);
-        if (treeType != null)
-        {
-            return treeType;
-        }
+                                                      && x.Color == color
+                                                      && x.Texture == texture);
+        if (treeType != null) return treeType;
 
-        treeType = new TreeType()
+        treeType = new TreeType
         {
             Name = name,
             Color = color,
@@ -54,20 +52,21 @@ public class TreeFactory
         };
 
         _treeTypes.Add(treeType);
-        System.Console.WriteLine($"Create new tree type: {treeType}");
+        Console.WriteLine($"Create new tree type: {treeType}");
         return treeType;
     }
 }
 
 public class Forest
 {
-    public List<Tree> Trees { get; set; } = new List<Tree>();
     private readonly TreeFactory _treeFactory;
 
     public Forest(TreeFactory treeFactory)
     {
         _treeFactory = treeFactory;
     }
+
+    public List<Tree> Trees { get; set; } = new();
 
     public Tree PlantTree(int x, int y, string name, string color, string texture)
     {

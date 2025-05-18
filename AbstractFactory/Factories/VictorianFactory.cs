@@ -8,7 +8,6 @@ namespace AbstractFactory.Factories;
 
 public class VictorianFactory : IFurnitureFactory
 {
-
     public Furniture CreateFurniture(Type type)
     {
         switch (type)

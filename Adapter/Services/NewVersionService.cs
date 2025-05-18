@@ -1,9 +1,11 @@
-﻿namespace Adapter;
+﻿using Adapter.Models;
+
+namespace Adapter.Services;
 
 public class NewVersionService
 {
     public void Execute(JsonRequest request)
     {
-        System.Console.WriteLine($"New service execute {request.Body}");
+        Console.WriteLine($"New service execute {request.Body}");
     }
 }

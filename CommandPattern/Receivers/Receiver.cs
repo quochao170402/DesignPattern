@@ -1,4 +1,4 @@
-﻿namespace CommandPattern;
+﻿namespace CommandPattern.Receivers;
 
 public abstract class Receiver
 {

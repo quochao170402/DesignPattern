@@ -1,8 +1,7 @@
-﻿namespace CommandPattern;
+﻿namespace CommandPattern.Receivers;
 
 public class WashingMachine : Receiver
 {
-
     public WashingMachine()
     {
         Type = ReceiverType.Fan;
@@ -11,15 +10,14 @@ public class WashingMachine : Receiver
 
     public override void TurnOff()
     {
-
         if (!State)
         {
-            System.Console.WriteLine("Washing machine is turning off");
+            Console.WriteLine("Washing machine is turning off");
         }
         else
         {
             State = false;
-            System.Console.WriteLine("Turning off Washing machine");
+            Console.WriteLine("Turning off Washing machine");
         }
     }
 
@@ -27,13 +25,12 @@ public class WashingMachine : Receiver
     {
         if (State)
         {
-            System.Console.WriteLine("Washing machine is turning on");
+            Console.WriteLine("Washing machine is turning on");
         }
         else
         {
             State = true;
-            System.Console.WriteLine("Turning on Washing machine");
+            Console.WriteLine("Turning on Washing machine");
         }
     }
-
 }

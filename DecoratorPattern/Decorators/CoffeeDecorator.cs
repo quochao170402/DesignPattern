@@ -1,7 +1,11 @@
-﻿namespace DecoratorPattern;
+﻿using DecoratorPattern.Base;
+
+namespace DecoratorPattern.Decorators;
+
 public abstract class CoffeeDecorator : ICoffee
 {
     private readonly ICoffee _coffee;
+
     protected CoffeeDecorator(ICoffee coffee)
     {
         _coffee = coffee;

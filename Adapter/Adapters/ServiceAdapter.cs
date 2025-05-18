@@ -1,4 +1,7 @@
-﻿namespace Adapter;
+﻿using Adapter.Models;
+using Adapter.Services;
+
+namespace Adapter.Adapters;
 
 public class ServiceAdapter : IService
 {
@@ -11,12 +14,13 @@ public class ServiceAdapter : IService
 
     public void Execute(XMLRequest request)
     {
-        JsonRequest json = convertRequest(request);
+        var json = convertRequest(request);
         _newService.Execute(json);
     }
+
     public JsonRequest convertRequest(XMLRequest xmlRequest)
     {
-        return new JsonRequest()
+        return new JsonRequest
         {
             Id = xmlRequest.Id,
             Body = xmlRequest.Data

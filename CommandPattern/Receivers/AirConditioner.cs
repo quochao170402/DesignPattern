@@ -1,8 +1,7 @@
-﻿namespace CommandPattern;
+﻿namespace CommandPattern.Receivers;
 
 public class AirConditioner : Receiver
 {
-
     public AirConditioner()
     {
         Type = ReceiverType.Fan;
@@ -11,15 +10,14 @@ public class AirConditioner : Receiver
 
     public override void TurnOff()
     {
-
         if (!State)
         {
-            System.Console.WriteLine("Air conditioner is turning off");
+            Console.WriteLine("Air conditioner is turning off");
         }
         else
         {
             State = false;
-            System.Console.WriteLine("Turning off Air conditioner");
+            Console.WriteLine("Turning off Air conditioner");
         }
     }
 
@@ -27,13 +25,12 @@ public class AirConditioner : Receiver
     {
         if (State)
         {
-            System.Console.WriteLine("Air conditioner is turning on");
+            Console.WriteLine("Air conditioner is turning on");
         }
         else
         {
             State = true;
-            System.Console.WriteLine("Turning on Air conditioner");
+            Console.WriteLine("Turning on Air conditioner");
         }
     }
-
 }

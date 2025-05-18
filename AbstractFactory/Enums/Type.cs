@@ -4,10 +4,7 @@ namespace AbstractFactory.Enums;
 
 public enum Type
 {
-    [Display(Name = "Chair")]
-    Chair,
-    [Display(Name = "Sofa")]
-    Sofa,
-    [Display(Name = "Table")]
-    Table
+    [Display(Name = "Chair")] Chair,
+    [Display(Name = "Sofa")] Sofa,
+    [Display(Name = "Table")] Table
 }

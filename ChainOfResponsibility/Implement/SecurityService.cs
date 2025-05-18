@@ -1,4 +1,4 @@
-﻿namespace ChainOfResponsibility;
+﻿namespace ChainOfResponsibility.Implement;
 
 public class SecurityService : ISecurityService
 {

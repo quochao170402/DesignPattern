@@ -1,4 +1,4 @@
-﻿namespace BridgePattern;
+﻿namespace BridgePattern.Models;
 
 public abstract class IDevice
 {

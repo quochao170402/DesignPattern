@@ -47,7 +47,7 @@
 
 using ObserverPattern.EducationExample;
 
-var school= new School();
+var school = new School();
 
 var teacher = new Teacher();
 var admin = new Administrator();

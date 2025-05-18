@@ -1,5 +1,5 @@
-﻿namespace FacadePattern;
+﻿namespace FacadePattern.Models;
+
 public class User
 {
-
 }

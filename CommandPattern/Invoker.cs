@@ -40,5 +40,4 @@ public class Invoker
             Console.WriteLine("Command cannot undo");
         }
     }
-
 }

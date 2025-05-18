@@ -1,17 +1,19 @@
-﻿namespace BridgePattern;
+﻿namespace BridgePattern.Shape;
+
 public abstract class Shape
 {
-
     private readonly Color _color;
-    public string Name { get; set; }
-    public ShapeType Type { get; set; }
 
     public Shape(Color color)
     {
         _color = color;
     }
 
+    public string Name { get; set; }
+    public ShapeType Type { get; set; }
+
     public abstract double GetArea();
+
     public void Display()
     {
         Console.WriteLine($"{Name} - {Type} - {GetArea()} {_color.Name}");
@@ -31,6 +33,7 @@ public class Circle : Shape
     }
 
     public double R { get; set; }
+
     public override double GetArea()
     {
         const double PI = 3.14;
@@ -46,6 +49,7 @@ public class Square : Shape
 
     public double Width { get; set; }
     public double Hight { get; set; }
+
     public override double GetArea()
     {
         return Width * Hight;

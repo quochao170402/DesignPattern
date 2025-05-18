@@ -1,4 +1,5 @@
-﻿namespace FacadePattern;
+﻿namespace FacadePattern.Models;
+
 public class BankAccount
 {
     public string Id { get; set; }
@@ -10,10 +11,7 @@ public class AccountManager
 {
     public bool ValidateAccount(string id, string securityCode)
     {
-        if (id == "123" && securityCode == "321")
-        {
-            return true;
-        }
+        if (id == "123" && securityCode == "321") return true;
 
         return false;
     }
@@ -23,12 +21,12 @@ public class BankMoneyManager
 {
     public void Deposit(int amount)
     {
-        System.Console.WriteLine($"Deposit {amount}");
+        Console.WriteLine($"Deposit {amount}");
     }
 
     public void Withdraw(int amount)
     {
-        System.Console.WriteLine($"Withdraw {amount}");
+        Console.WriteLine($"Withdraw {amount}");
     }
 
     public bool IsEnoughMoney(int amount)
@@ -36,5 +34,4 @@ public class BankMoneyManager
         if (amount > 0) return true;
         return false;
     }
-
 }
