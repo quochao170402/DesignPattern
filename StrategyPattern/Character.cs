@@ -2,16 +2,26 @@ namespace StrategyPattern;
 
 public class Character
 {
-    protected IWeaponBehavior WeaponBehavior { get; private set; }
-
+    protected IWeaponBehavior? WeaponBehavior { get; private set; }
+    protected IArmorBehavior? ArmorBehavior { get; private set; }
     public void SetWeaponBehavior(IWeaponBehavior behavior)
     {
         WeaponBehavior = behavior;
     }
 
+    public void SetArmorBehavior(IArmorBehavior behavior)
+    {
+        ArmorBehavior = behavior;
+    }
+
     public void Fight()
     {
-        WeaponBehavior.UseWeapon();
+        WeaponBehavior?.UseWeapon();
+    }
+
+    public void Wearing()
+    {
+        ArmorBehavior?.UseArmor();
     }
 }
 
