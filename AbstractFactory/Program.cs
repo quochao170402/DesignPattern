@@ -1,13 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using AbstractFactory.Enums;
-using AbstractFactory.Factories;
-using Type = AbstractFactory.Enums.Type;
+using AbstractFactory.FurnitureStores;
 
-const Type type = Type.Sofa;
-const Style style = Style.Victorian;
+IFurnitureStore store = new ArtDecoFurnitureStore();
+var table = store.CreateTable();
 
-IFactory factory = new Factory();
-var furnitureFactory = factory.GetFurnitureFactory(style);
-var furniture = furnitureFactory.CreateFurniture(type);
-furniture.Display();
+table.Display();
