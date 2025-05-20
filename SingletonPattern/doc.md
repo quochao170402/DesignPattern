@@ -1,98 +1,15 @@
-# Singleton pattern
+# Singleton Pattern
 
-## Definition
+### 1. Definition
+Ensures that a class has only one instance and provides a global point of access to that instance.
 
-The Singleton Pattern ensures a class has only one instance and provides a global point of access to it.
+**Meaning**: Only one instance of the Singleton class is created, and this instance can be accessed globally throughout the application.
 
-## Implementation
+### 2. When to Use It
+- When you need exactly one instance of a class to be shared across the entire application.
+- When consistent and centralized access to shared data or resources is required (e.g., logging, configuration, database connection).
 
-Here is an example of a Singleton implementation in Python:
-
-```c#
-namespace SingletonPattern;
-
-public class ServerPool
-{
-    private readonly List<string> _urls;
-
-    private static ServerPool? Instance
-    {
-        get;
-        set;
-    }
-
-    private ServerPool()
-    {
-        _urls = new List<string>();
-    }
-
-    public static ServerPool GetInstance()
-    {
-        if (Instance == null)
-        {
-            System.Console.WriteLine("Create new server instance");
-            Instance = new ServerPool();
-        }
-
-        return Instance;
-    }
-
-    public bool Add(string url)
-    {
-        if (!IsValidUrl(url))
-        {
-            return false;
-        }
-
-        if (_urls.Contains(url))
-        {
-            return false;
-        }
-
-        _urls.Add(url);
-        return true;
-    }
-
-    public bool Remove(string url)
-    {
-        if (!IsValidUrl(url))
-        {
-            return false;
-        }
-
-        if (_urls.Contains(url))
-        {
-            return false;
-        }
-
-        _urls.Remove(url);
-        return true;
-    }
-
-    private bool IsValidUrl(string url)
-    {
-        return url.StartsWith("http") || url.StartsWith("https");
-
-    }
-}
-
-// Program.cs
-for (int i = 0; i < 5; i++)
-{
-    ServerPool serverPool = ServerPool.GetInstance();
-}
-
-```
-
-## Benefits
-
-- Controlled access to the sole instance.
-- Reduced namespace pollution.
-- Permits refinement of operations and representation.
-- Permits a variable number of instances.
-
-## Drawbacks
-
-- Can be difficult to test due to global state.
-- Can hide dependencies, making the code harder to understand.
-- Can be a bottleneck if misused in a multithreaded environment.
+### 3. Benefits
+- Ensures consistent data across the application.
+- Reduces resource usage by preventing multiple unnecessary instances.
+- Provides a single point of control for managing shared state or behavior.

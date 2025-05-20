@@ -9,17 +9,9 @@ public class ServerPool
         _urls = new List<string>();
     }
 
-    private static ServerPool? Instance { get; set; }
+    private static ServerPool Instance { get; } = new();
 
-    public static ServerPool GetInstance()
-    {
-        if (Instance != null) return Instance;
-
-        Console.WriteLine("Create new server instance");
-        Instance = new ServerPool();
-
-        return Instance;
-    }
+    public static ServerPool GetInstance() => Instance;
 
     public bool Add(string url)
     {
@@ -41,7 +33,7 @@ public class ServerPool
         return true;
     }
 
-    private bool IsValidUrl(string url)
+    private static bool IsValidUrl(string url)
     {
         return url.StartsWith("http") || url.StartsWith("https");
     }
