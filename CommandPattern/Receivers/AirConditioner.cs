@@ -1,36 +1,23 @@
 ﻿namespace CommandPattern.Receivers;
 
-public class AirConditioner : Receiver
+public class AirConditioner
 {
-    public AirConditioner()
+    private const int MaxSpeed = 3;
+    private int _currentSpeed;
+
+    public void High()
     {
-        Type = ReceiverType.Fan;
+        if (_currentSpeed < MaxSpeed) _currentSpeed++;
+        else Console.WriteLine("Maximum speed");
+
+        Console.WriteLine($"High speed: {_currentSpeed}");
     }
 
-
-    public override void TurnOff()
+    public void Low()
     {
-        if (!State)
-        {
-            Console.WriteLine("Air conditioner is turning off");
-        }
-        else
-        {
-            State = false;
-            Console.WriteLine("Turning off Air conditioner");
-        }
-    }
+        if (_currentSpeed > 0) _currentSpeed--;
+        else Console.WriteLine("Minimum speed");
 
-    public override void TurnOn()
-    {
-        if (State)
-        {
-            Console.WriteLine("Air conditioner is turning on");
-        }
-        else
-        {
-            State = true;
-            Console.WriteLine("Turning on Air conditioner");
-        }
+        Console.WriteLine($"Low speed: {_currentSpeed}");
     }
 }

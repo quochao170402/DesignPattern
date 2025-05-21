@@ -1,37 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using CommandPattern;
+using CommandPattern.Commands;
 using CommandPattern.Receivers;
 
 Console.WriteLine("Hello, World!");
-
-Receiver receiver = new Fan();
-Receiver tv = new TV();
-Receiver washingMachine = new WashingMachine();
-Receiver airConditioner = new AirConditioner();
-
-Console.WriteLine("Before");
-Console.WriteLine(receiver.State);
-Console.WriteLine(tv.State);
-Console.WriteLine(washingMachine.State);
-Console.WriteLine(airConditioner.State);
-
 var invoker = new Invoker();
+var ariConditioner = new AirConditioner();
+invoker.Execute(new AirConditionerHighCommand(ariConditioner));
+invoker.Execute(new AirConditionerHighCommand(ariConditioner));
+invoker.Execute(new AirConditionerLowCommand(ariConditioner));
+invoker.Execute(new AirConditionerHighCommand(ariConditioner));
 
-invoker.Push(new Command(receiver));
-invoker.Push(new Command(tv));
-invoker.Push(new Command(washingMachine));
-invoker.Push(new Command(airConditioner));
 
-invoker.Execute();
-invoker.Execute();
-invoker.Execute();
-invoker.Execute();
+
+var player = new MusicPlayer("Ngôi sao lẻ loi");
+invoker.Execute(new MusicPlayerPlayCommand(player));
+invoker.Execute(new MusicPlayerPauseCommand(player));
+
 invoker.Undo();
 invoker.Undo();
-
-Console.WriteLine("After");
-Console.WriteLine(receiver.State);
-Console.WriteLine(tv.State);
-Console.WriteLine(washingMachine.State);
-Console.WriteLine(airConditioner.State);
+invoker.Undo();
+invoker.Undo();
+invoker.Undo();
