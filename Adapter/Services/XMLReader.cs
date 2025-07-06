@@ -2,7 +2,7 @@
 
 namespace Adapter.Services;
 
-public class LegacyService : IService
+public class XMLReader : IReader
 {
     public void Execute(XMLRequest request)
     {

@@ -1,6 +1,6 @@
 # Factory Method Pattern
 
-### 1. Definition
+### 1. Defined
 
 Defines an interface to creating an object but let subclasses decide class which will create object. Factory Method
 pattern lets a class defer instantiation to the subclass.
@@ -19,7 +19,7 @@ pattern lets a class defer instantiation to the subclass.
 
 # Abstract Factory Pattern
 
-### 1. Definition
+### 1. Defined
 
 Provide an interface to creating families of related or dependencies objects without specifying concrete classes.
 

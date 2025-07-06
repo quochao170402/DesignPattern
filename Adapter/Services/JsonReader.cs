@@ -2,9 +2,9 @@
 
 namespace Adapter.Services;
 
-public class NewVersionService
+public class JsonReader
 {
-    public void Execute(JsonRequest request)
+    public static void Execute(JsonRequest request)
     {
         Console.WriteLine($"New service execute {request.Body}");
     }

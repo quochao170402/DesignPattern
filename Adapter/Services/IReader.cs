@@ -2,7 +2,7 @@
 
 namespace Adapter.Services;
 
-public interface IService
+public interface IReader
 {
     void Execute(XMLRequest request);
 }
